@@ -86,7 +86,7 @@ pip install -r requirements.txt
 1. Clone this repository or download the project archive.
 
 ```bash
-git clone <repo-url> AndroSH
+git clone https://github.com/ahmed-alnassif/AndroSH.git
 cd AndroSH
 ```
 
