@@ -161,3 +161,5 @@ Please include device model, Android version, and steps to reproduce for bug rep
 ## License
 
 This project is provided under the MIT License. See `LICENSE` for full terms. If you prefer a different license, update the file accordingly.
+
+## Don't forget to give a star and follow.
