@@ -143,7 +143,6 @@ python main.py
 ## Security & Privacy
 
 * AndroSH uses Shizuku to execute commands with elevated app permissions. Only install Shizuku from a trusted source (official GitHub or Play Store). Review any DEX or helper binaries included in `Assets/` before running.
-* The project downloads the Alpine tarball from a configured URL — verify the URL and checksum if you have strict security requirements.
 
 ---
 
