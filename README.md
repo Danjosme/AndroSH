@@ -136,7 +136,6 @@ python main.py
 * **Network or downloader failures:**
 
   * Check your device's network connectivity.
-  * Re-run the script with an active connection; downloaded artifacts are cached under `Alpine/`.
 
 ---
 
