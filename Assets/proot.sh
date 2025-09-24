@@ -1,13 +1,13 @@
 #!/system/bin/sh
 
 # === Custom Environment Variables ===
-export LD_LIBRARY_PATH=/data/local/tmp/{{name}}
-export PROOT_TMP_DIR=/data/local/tmp/{{name}}/tmp
+export LD_LIBRARY_PATH={{dir}}
+export PROOT_TMP_DIR={{dir}}/tmp
 export TERM=xterm-256color
-PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/games:/usr/local/bin:/usr/local/sbin:/data/local/tmp/{{name}}/bin:/system/bin:\$PATH"
+PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/games:/usr/local/bin:/usr/local/sbin:{{dir}}/bin:/system/bin:\$PATH"
 
 # Main directory for Proot setup
-PROOT_MAIN=/data/local/tmp/{{name}}
+PROOT_MAIN={{dir}}
 ROOTFS_DIR=$PROOT_MAIN/{{distro}}
 PROOT_BIN=$PROOT_MAIN/proot
 
@@ -88,4 +88,4 @@ if [ ! -f $PROOT_MAIN/patched ]; then
     touch $PROOT_MAIN/patched
 fi
 
-$PROOT_BIN $ARGS sh -c "/bin/login -f root" "$@"
+$PROOT_BIN $ARGS sh -c "/bin/login -f root"

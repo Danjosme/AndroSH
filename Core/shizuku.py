@@ -23,8 +23,9 @@ class Rish:
 	
 	def rish(self, command: list):
 		env = os.environ.copy()
-		env['RISH_APPLICATION_ID'] = self.app_id
-
+		if not os.environ.get("RISH_APPLICATION_ID") or self.app_id_bool:
+			env['RISH_APPLICATION_ID'] = self.app_id
+		
 		result = subprocess.run(
 			[
 				"/system/bin/app_process",
@@ -45,11 +46,15 @@ class Rish:
 		return result
 	
 	def drun(self, command_string):
-		os.environ["RISH_APPLICATION_ID"] = self.app_id
+		if not os.environ.get("RISH_APPLICATION_ID") or self.app_id_bool:
+			os.environ["RISH_APPLICATION_ID"] = self.app_id
+		
 		status = os.system(f"/system/bin/app_process -Djava.class.path=\"{self.dex()}\" /system/bin --nice-name=rish rikka.shizuku.shell.ShizukuShellLoader {command_string}")
 		if not status == 0:
 			exit(1)
 	
-	def __init__(self, app_id: str = "com.termux"):
+	def __init__(self, app_id: str = "com.termux",
+		app_id_bool: bool = False):
 		self.assets_path = "Assets"
 		self.app_id = app_id
+		self.app_id_bool = app_id_bool

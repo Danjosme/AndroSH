@@ -5,7 +5,7 @@ from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 from rich import box
-from Core import name, developer
+from Core import name, developer, version
 
 class console:
 	def __init__(self):
@@ -53,5 +53,7 @@ class console:
 		print(logo)
 		d = \
 		f"Created by [bold green]{developer["name"]}[/bold green]\n"+\
-		f"GitHub: {developer["github"]}"
+		f"GitHub: {developer["github"]}\n"+\
+		f"Version: [red]{version}[/red]"
+		
 		self.header(d)

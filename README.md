@@ -31,6 +31,9 @@ This project leverages a small helper (Rish/Shizuku helper) to run commands with
 
 ![Screenshot 2](Assets/screenshots/2.jpg)
 
+![Screenshot 3](Assets/screenshots/3.jpg)
+
+
 </div>
 
 ---
@@ -108,7 +111,7 @@ pip install -r requirements.txt
 2. From the project directory, run the main launcher:
 
 ```bash
-python main.py
+python main.py --help
 ```
 
 3. When inside the Alpine environment, you can use `apk` to install packages, run development tasks, or mount storage as needed via the provided wrapper.

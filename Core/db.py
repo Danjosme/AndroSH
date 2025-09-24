@@ -78,7 +78,7 @@ class DB:
 		"""Context manager exit."""
 		self.close()
 			
-	def check(self) -> bool:
+	def check(self) -> Optional[Any]:
 		"""
 		Check if project setup is complete.
 		
@@ -92,7 +92,8 @@ class DB:
 			
 			if result:
 				done_value = self._deserialize_value(result[0])
-				return bool(done_value)
+				if done_value.get("status"):
+					return done_value.get("name")
 			return False
 			
 		except sqlite3.Error as e:
@@ -101,7 +102,7 @@ class DB:
 		finally:
 			self.close()
 			
-	def setup(self, done: bool = True) -> bool:
+	def setup(self, done: bool = True, name: str = name) -> bool:
 		"""
 		Mark project setup as complete or incomplete.
 		
@@ -113,7 +114,10 @@ class DB:
 		"""
 		try:
 			self.connect()
-			serialized_done = self._serialize_value(done)
+			serialized_done = self._serialize_value({
+				"status": done,
+				"name": name
+			})
 			
 			self.cursor.execute(
 				"INSERT OR REPLACE INTO data (key, value, updated_at) VALUES (?, ?, ?)",
@@ -413,6 +417,8 @@ class DB:
 			else:
 				# Remove entire key (cascade will remove subdata)
 				self.cursor.execute("DELETE FROM data WHERE key = ?", (key,))
+				self.cursor.execute("DELETE FROM subdata WHERE parent_key = ?", (key,))
+
 			
 			self.conn.commit()
 			return True
